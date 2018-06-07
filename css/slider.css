@@ -1,0 +1,90 @@
+.slider {
+    width:100vw;
+    grid-column:span 12;
+    text-align: center;
+    overflow: hidden;
+    
+  }
+
+  .slide {
+    display:flex;
+    flex-direction:column;
+  }
+
+  .slides {
+    display: flex;
+    overflow-x: auto;
+    border-radius: 5px;
+    scroll-behavior: smooth;
+    width:75%;
+    margin:0 auto;
+    
+    -webkit-overflow-scrolling: touch;
+    scroll-snap-points-x: repeat(300px);
+    scroll-snap-type: mandatory;
+  }
+  .slides::-webkit-scrollbar {
+    width: 0px;
+    height: 0px;
+  }
+  .slides::-webkit-scrollbar-thumb {
+    background: black;
+    border-radius: 10px;
+  }
+  .slides::-webkit-scrollbar-track {
+    background: transparent;
+  }
+  .slides > div {
+    flex-shrink: 0;
+    width: 30vw;
+    height: 50vh;
+    margin-right:1rem;
+    border-radius: 10px;
+    transform-origin: center center;
+    transform: scale(1);
+    
+    transition: transform 0.5s;
+    position: relative;
+    
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    
+  }
+  .slides > div:target {
+    transform: scale(0.8);
+    filter:sepia(75%);
+  }
+
+  
+  .slider > a {
+    display: inline-flex;
+    width: 3rem;
+    height: 3rem;
+    background: rgba(0,0,0,0.1);
+    text-decoration: none;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    margin: 0 0 0.5rem 0;
+    position: relative;
+
+  }
+  .slider > a:active {
+    
+  }
+  .slider > a:focus {
+    background: #000;
+  }
+
+@media screen and (max-width: 425px) {
+
+  .slides > div {
+      width:100vw;
+  }
+
+  .prev, .nxt {
+    display:none;
+  }
+
+}
